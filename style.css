@@ -1,0 +1,356 @@
+/*for dark toggle*/
+
+:root {
+  --bg-color: #f7f7f7;
+  --text-color: #222;
+  --accent: #ff4081;
+  --card-bg: rgba(255, 255, 255, 0.8);
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --card-bg: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+#darkModeToggle {
+  font-size: 1.5rem;  /* Make the icon larger */
+  background: transparent;  /* No background */
+  border: none;  /* No border */
+  color: var(--text-color);  /* Text color matches the page text color */
+  cursor: pointer;  /* Show a pointer cursor when hovering */
+  padding: 5px 10px;  /* Some padding to make the button easier to click */
+  transition: transform 0.3s ease;  /* Smooth transition when hovering */
+}
+
+#darkModeToggle:hover {
+  transform: scale(1.1);  /* Slightly enlarge the icon when hovering */
+  color: var(--accent);  /* Change color when hovered (for a little effect) */
+}
+
+/* Scroll Animations */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+} 
+html {
+  scroll-behavior: smooth;
+}
+
+/*HEADER*/
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: var(--card-bg);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+/*NAVIGATION*/
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-right: 20px; /* Shift the content slightly to the left */
+  padding-right: 20px; /* Ensure there's space to the right for the moon icon */
+}
+
+.nav__list a, .nav__list button {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px 12px; /* Add padding for button size */
+}
+
+.nav__list button {
+  font-size: 1.5rem; /* Make the moon icon slightly bigger */
+  transition: color 0.3s ease;
+}
+
+.nav__list :hover {
+  color: var(--accent); 
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Poppins','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+
+
+/*Headings*/
+
+  .section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+ /*PROJECTS*/
+
+  .projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  
+  .button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  .button:hover {
+    background: #e91e63;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  input, textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background: #222;
+    color: white;
+  }
+  
+ 
+
+/*ABOUT*/
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    background-color: var(--bg-color);
+    transition: background 0.3s;
+}
+
+.about-container {
+    display: flex;
+    max-width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+.about-text {
+    flex: 2;
+    text-align: left;
+    color: var(--text-color);
+    max-width: 600px;
+}
+
+.about-text h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--accent);
+    font-family: 'Poppins', 'Times New Roman', Times, serif
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-family: 'Arial', Georgia, 'Times New Roman', Times, serif
+}
+
+.cta-button {
+    padding: 12px 25px;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-block; 
+   text-decoration: none; /* So it doesn’t look like a link */
+}
+
+.cta-button:hover {
+    background-color: #e91e63;
+    transform: translateY(-5px);
+}
+
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .cta-button {
+        width: 100%;
+    }
+}
+
+  
+/*EDUCATION*/
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 600px;
+    margin-inline: auto;
+    padding: 1rem;
+  }
+  
+  .edu-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+  }
+  
+  .edu-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .year {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent);
+    min-width: 60px;
+  }
+  
+  .details h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text-color);
+  }
+  
+  .details p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+  
+  
+  
+  /*SKILLS*/
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .skill {
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+  
+  .skill:hover {
+    transform: scale(1.05);
+    background-color: var(--accent);
+    color: white;
+  }
+  #skills {
+    margin-bottom: 100px; /* FOR SPACING*/
+  }
+    
